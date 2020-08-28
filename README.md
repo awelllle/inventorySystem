@@ -1,6 +1,19 @@
 # inventorySystem
 
 This is a Simple Inventory Management System API.
+It has endpoints to do the following: <br>
+
+Log purchase receipts<br>
+
+Query DB for total sales in a given month<br>
+
+Query DB for complete product list<br>
+
+Add/modify/delete products<br>
+
+Query DB for monthly sales by product<br>
+
+
 
 ## Installation 
 To install, using:
