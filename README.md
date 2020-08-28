@@ -5,7 +5,7 @@ It has endpoints to do the following: <br>
 
 - Log purchase receipts<br>
 
-- Query DB for total sales in a given month<br>
+- Query DB for total sales in a given month (For this endpoint, I went ahead to allow them to query between 2 specific dates)<br>
 
 - Query DB for complete product list<br>
 
