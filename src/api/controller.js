@@ -1,4 +1,4 @@
-const {validParam, sendErrorResponse, sendSuccessResponse,generateCode, trimCollection} = require('../../helpers/utility');
+const {validParam, sendErrorResponse, sendSuccessResponse,generateCode, trimCollection} = require('../helpers/utility');
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 const Purchase = mongoose.model('Purchase');
