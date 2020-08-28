@@ -34,6 +34,8 @@ npm start
 ```
 
 ### Testing
+I just threw in a test for the add product endpoint.
+
 To run tests, use:
 
 ```
