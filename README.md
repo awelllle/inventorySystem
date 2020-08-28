@@ -13,7 +13,8 @@ It has endpoints to do the following: <br>
 
 - Query DB for monthly sales by product<br>
 
-
+## Documentation
+http://bit.ly/InventoryApiDocs
 
 ## Installation 
 To install, using:
