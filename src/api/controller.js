@@ -96,7 +96,7 @@ exports.products = (req, res) => {
 exports.addProduct = (req, res) =>{
     let required = [
         {name: 'name', type: 'string'},
-        {name: 'price', type: 'string'}
+        {name: 'price', type: 'number'}
     ];
     let hasRequired = validParam(req.body, required);
     if (hasRequired.success) {
@@ -124,6 +124,7 @@ exports.addProduct = (req, res) =>{
 exports.updateProduct = (req, res) =>{
     let required = [
         {name: 'id', type: 'string'},
+        {name: 'price', type: 'number'},
         {name: 'availability', type: 'boolean'},
         {name: 'name', type:'string'}
     ];
@@ -135,9 +136,9 @@ exports.updateProduct = (req, res) =>{
 
             id = new ObjectId(body.id);
             Product.updateOne(
-                {  _id : id }, {
+                {  prodId : body.id }, {
                 $set: {
-
+                    price: body.price,
                     name : body.name,
                     availability : body.availability,
                     
