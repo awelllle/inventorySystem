@@ -16,8 +16,6 @@ exports.getTotalSales = (req, res) =>{
 
     req.body = trimCollection(req.body);
     const body = req.body;
-            
-
     let max =  new Date(body.max);
     let min = new Date(body.min);
 
@@ -80,6 +78,12 @@ exports.getTotalSalesByProduct = (req, res) =>{
 
 }
 exports.products = (req, res) => {
+
+
+    let limit = req.body.limit || 10 ;
+    let skip = req.body.skip || 0 ;
+
+
     Product.find({ }, function (err, result) {
         if(err)
         {
@@ -87,7 +91,7 @@ exports.products = (req, res) => {
             return sendErrorResponse(res, {}, 'Something went wrong, Please try again');
         }
         return sendSuccessResponse(res, result, 'Here you go')
-    });
+    }).limit(limit).skip(skip);
 }
 exports.addProduct = (req, res) =>{
     let required = [
