@@ -2,7 +2,6 @@ const {validParam, sendErrorResponse, sendSuccessResponse,generateCode, trimColl
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 const Purchase = mongoose.model('Purchase');
-const ObjectId = require('mongodb').ObjectId;
 
 
 exports.getTotalSales = (req, res) =>{
@@ -134,7 +133,7 @@ exports.updateProduct = (req, res) =>{
             req.body = trimCollection(req.body);
             const body = req.body;
 
-            id = new ObjectId(body.id);
+            id = body.id;
             Product.updateOne(
                 {  prodId : body.id }, {
                 $set: {
@@ -169,8 +168,8 @@ exports.deleteProduct = (req, res)=> {
     let hasRequired = validParam(req.body, required);
     if (hasRequired.success) {
 
-        id = new ObjectId(req.body.id);  
-        Product.deleteOne( { _id : id}, { }, (err, updated) => {
+        id = req.body.id;  
+        Product.deleteOne( { prodId : id}, { }, (err, updated) => {
                 return sendSuccessResponse(res, {}, 'Item Deleted');
         }); 
 
