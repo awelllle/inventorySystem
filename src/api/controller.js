@@ -55,7 +55,6 @@ exports.getTotalSalesByProduct = (req, res) =>{
     req.body = trimCollection(req.body);
     const body = req.body;
             
-
     let max =  new Date(body.max);
     let min = new Date(body.min);
 
@@ -73,14 +72,14 @@ exports.getTotalSalesByProduct = (req, res) =>{
         {
             return sendErrorResponse(res, err, 'Something went wrong, please try again');
         }
-        return sendSuccessResponse(res, result, 'Sales for the month');   
+        return sendSuccessResponse(res, result, 'Here you go');   
     }); 
 }else{
     return sendErrorResponse(res, {required: hasRequired.message}, 'Missing required fields');
 }
 
 }
-exports.products = (req, res) =>{
+exports.products = (req, res) => {
     Product.find({ }, function (err, result) {
         if(err)
         {
@@ -186,9 +185,9 @@ exports.logPurchase = (req, res)=>{
         req.body = trimCollection(req.body);
         const body = req.body;
 
-        let nPurchase             = new Purchase();
+        let nPurchase                = new Purchase();
         nPurchase.prodId             = body.prodId;
-        nPurchase.qty               = body.qty;
+        nPurchase.qty                = body.qty;
 
         nPurchase.save((err) => {
             console.log(err);

@@ -9,24 +9,31 @@ npm install
 ```
 
 ## Endpoints 
-All endpoints are in src > api > index.js 
-```
 
-```
+All endpoints are in src > api > index.js 
 
 ## Development
 
 ### Starting
-To start, using:
+To start, use:
 ```
 npm start
 ```
+
+### Testing
+To run tests, use:
+
+```
+npm test
+```
+
+
 ## Project Structure
 <pre>
 <b>src</b>
  ┣ <b>api</b>    // Contains the real code that does the work. Lol
  ┃ ┗ ...  
- ┣ <b>config</b>       // Contains mongodb connections for development and production, ...
+ ┣ <b>config</b>       // Contains mongodb URLs for development and production, ...
  ┃ ┣ config
  ┃ ┗ ...
  ┣ <b>helpers</b>       // Contains utility files
@@ -36,6 +43,5 @@ npm start
  ┃ ┗...
  ┣ <b>routes</b>       // Contains route files
  ┃ ┗...
- ┣ App.js
  ┣ index.js
 </pre>
